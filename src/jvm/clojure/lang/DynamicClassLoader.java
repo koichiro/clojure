@@ -28,8 +28,7 @@ static final URL[] EMPTY_URLS = new URL[]{};
 
 public DynamicClassLoader(){
     //pseudo test in lieu of hasContextClassLoader()
-	super(EMPTY_URLS,(Thread.currentThread().getContextClassLoader() == null ||
-                Thread.currentThread().getContextClassLoader() == ClassLoader.getSystemClassLoader())?
+	super(EMPTY_URLS,(Thread.currentThread().getContextClassLoader() == null)?
                 Compiler.class.getClassLoader():Thread.currentThread().getContextClassLoader());
 //	super(EMPTY_URLS,Compiler.class.getClassLoader());
 }
